@@ -1,0 +1,28 @@
+
+//FT_SUBSTR
+
+int	main(void)
+{
+	char	s[] = "locate a substring in a string";
+	char	*sub;
+
+	printf("STRING: %s\n", s);
+	sub = ft_substr(s, 5, 10);
+	printf("SUBSTRING: %s\n", sub);
+	return (0);
+}
+
+//FT_STRJOIN
+
+int	main(void)
+{
+	char	c[] = "Hola";
+	char	c2[] = " mundo123456789";
+	char	*str;
+
+	str = NULL;
+	printf("La union de las cadenas '%s' y '%s'\n", c, c2);
+	str = ft_strjoin(c, c2);
+	printf("%s\n", str);
+	return (0);
+}
