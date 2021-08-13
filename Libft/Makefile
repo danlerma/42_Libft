@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/08/12 20:45:41 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/08/11 18:02:37 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 
 OBJS = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -pedantic -O3 
+CFLAGS = -Wall -Wextra -Werror -pedantic -O3 #optimizacion de codigo = O3, informacion de todo lo fallido con premeditacion alevosia y blabla -pedantic
 
 $(NAME): $(OBJS)
 	@ar r $(NAME) $(OBJS)
@@ -39,6 +39,7 @@ all: $(NAME)
 run: all
 	@tput setaf 153; echo "MAKEFLE OF LIBFT"
 	@gcc libft.a -g3 -o a.out  
+#g flag para el debugging
 	./a.out
 
 normi:
