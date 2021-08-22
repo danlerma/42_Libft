@@ -6,13 +6,13 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:27:12 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/11 17:58:35 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/22 14:41:16 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-static unsigned int	numCharacters(int nb)
+static int	num_characters(int nb)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ static unsigned int	numCharacters(int nb)
 	return (i);
 }
 
-static char	*numNegative(char *str, int nb, int i)
+static char	*num_negative(char *str, int nb, int i)
 {
 	unsigned int	num;
 
@@ -48,13 +48,13 @@ static char	*numNegative(char *str, int nb, int i)
 	return (str);
 }
 
-static char	*numbers(int nb, int numC)
+static char	*numbers(int nb, int numc)
 {
 	char	*str;
 	int		i;
 
-	i = numC - 1;
-	str = (char *)malloc(numC + 1);
+	i = numc - 1;
+	str = (char *)malloc(numc + 1);
 	if (str == NULL)
 		return (NULL);
 	if (nb >= 0)
@@ -67,17 +67,17 @@ static char	*numbers(int nb, int numC)
 		}
 	}
 	else
-		str = numNegative(str, nb, i);
-	str[numC] = '\0';
+		str = num_negative(str, nb, i);
+	str[numc] = '\0';
 	return (str);
 }
 
 char	*ft_itoa(int n)
 {
-	unsigned int		numChar;
+	unsigned int		num_char;
 	char				*str;
 
-	numChar = numCharacters(n);
-	str = numbers(n, numChar);
+	num_char = num_characters(n);
+	str = numbers(n, num_char);
 	return (str);
 }

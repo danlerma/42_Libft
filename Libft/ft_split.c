@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:26:07 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/11 18:17:25 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/22 14:51:17 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,54 +19,46 @@ static int	count_sep(const char *s, char c, char type)
 	i = 0;
 	if (type == 'p')
 	{
-		while (s[i] == c)
+		while (s[i] == c && s[i] != '\0')
 			i++;
 	}
 	else
 	{
-		while (s[i] != c)
+		while (s[i] != c && s[i] != '\0')
 			i++;
 	}
 	return (i);
 }
 
-static int	count_rows(const char *str, char c)
+static int	count_rows(const char *s, char c)
 {
 	int	i;
-	int	bool;
-	int	y;
+	int	cnt;
 
 	i = 0;
-	y = 0;
-	bool = 0;
-	while (str[y])
+	cnt = 0;
+	if (s[0] && s[0] != c)
+		cnt = 1;
+	while (i < ft_strlen(s))
 	{
-		if (str[y] != c && bool == 0)
-		{
-			bool = 1;
-			i++;
-		}
-		else if (str[y] == c)
-			bool = 0;
-		y++;
-	}
-	return (i);
-}
-
-static int	count_column(const char *s, char c)
-{
-	int	i;
-	int	y;
-
-	i = 0;
-	y = 0;
-	while (s[i])
-	{
-		if (s[i] == c && s[i + 1] != c)
-			return (i + 1);
+		if (s[i] == c && s[i + 1] != c && s[i + 1])
+			cnt++;
 		i++;
 	}
-	return (i);
+	return (cnt);
+}
+
+static void	ft_copy(char *ptr, const char *s, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = '\0';
 }
 
 static char	**assing_str(char **str, const char *s, char c, int numrows)
@@ -77,17 +69,16 @@ static char	**assing_str(char **str, const char *s, char c, int numrows)
 	int	aux;
 
 	i = 0;
-	aux = 0;
 	aux = count_sep(s, c, 'p');
+	ncolumn = count_sep(&s[aux], c, 's');
 	while (i < numrows)
 	{
-		str[i] = (char *)malloc(ncolumn + 1 * sizeof(char));
-		if (str[i] == NULL)
-			return (0);
-		ncolumn = count_column(&s[aux], c);
-		numchar = count_sep(&s[aux], c, 's');
-		ft_strlcpy(str[i], &s[aux], numchar + 1);
+		str[i] = malloc((ncolumn + 1) * sizeof(char));
+		ft_copy(str[i], &s[aux], ncolumn + 1);
 		aux = aux + ncolumn;
+		numchar = count_sep(&s[aux], c, 'p');
+		aux = numchar + aux;
+		ncolumn = count_sep(&s[aux], c, 's');
 		i++;
 	}
 	str[i] = NULL;
@@ -102,7 +93,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	nrows = count_rows(s, c);
-	str = (char **)malloc(nrows + 1 * sizeof(char *));
+	str = ft_calloc(sizeof(char *), (nrows + 1));
 	if (str == NULL)
 		return (NULL);
 	str = assing_str(str, s, c, nrows);

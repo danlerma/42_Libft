@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:48:57 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/07 17:05:44 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/22 14:51:21 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int		num;
-	unsigned int		i;
-	char				*str;
-	const char			*s;
+	size_t		num;
+	size_t		i;
+	char		*str;
+	const char	*s;
 
 	i = -1;
 	num = sizeof(dst);

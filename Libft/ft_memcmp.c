@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:55:32 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/11 17:49:44 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/22 14:51:20 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

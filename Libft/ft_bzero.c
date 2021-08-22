@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlerma-c <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 11:48:28 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/07/29 11:48:30 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/13 10:07:34 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned int		i;

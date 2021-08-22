@@ -6,16 +6,14 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:39:05 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/11 12:31:11 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/13 10:29:30 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 
 # define LIBFT_H
-# include <stdio.h>
 # include <stdlib.h>
-# include <ctype.h>
 # include <unistd.h>
 
 int		ft_atoi(const char *str);

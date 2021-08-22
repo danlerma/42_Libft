@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:12:29 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/11 18:00:51 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/22 14:52:33 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	unsigned int	countsrc;
 	unsigned int	countdst;
 	unsigned int	i;
-	int				result;
+	size_t			result;
 
 	countsrc = ft_strlen((char *)src);
 	countdst = ft_strlen(dst);
