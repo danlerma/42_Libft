@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:26:07 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/22 14:51:17 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/22 14:59:39 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static int	count_sep(const char *s, char c, char type)
 
 static int	count_rows(const char *s, char c)
 {
-	int	i;
-	int	cnt;
+	unsigned int	i;
+	int				cnt;
 
 	i = 0;
 	cnt = 0;
