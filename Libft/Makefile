@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/08/23 19:46:55 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/08/23 19:59:40 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,16 +40,19 @@ $(NAME): $(OBJS)
 %.o : %.c libft.h
 	@gcc $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJSBONUS)
-	@gcc -g3 -o a.out
-	/a.out
+bonus: $(OBJSBONUS) libft.h
+	@ar rcs $(NAME) $(OBJSBONUS)
 	
-
 run: all
 	@tput setaf 153; echo "MAKEFILE OF LIBFT"
-	@gcc libft.a -g3 -o a.out  
+	@gcc $(CFLAGS) libft.a -g3 -o a.out  
 	./a.out
 
+run_bonus: bonus
+	@tput setaf 58; echo "MAKEFILE OF LIBFT BONUS"
+	@gcc $(CFLAGS) libft.a -g3 -o a.out  
+	./a.out
+	
 normi:
 	norminette $(SRC) ./libft.h
 	@tput setaf 153; echo "Norminette"
