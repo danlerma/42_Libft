@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/08/22 14:34:56 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/08/23 19:46:55 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,29 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 		ft_toupper.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_strmapi.c \
 		ft_striteri.c ft_putendl_fd.c ft_putnbr_fd.c
-		
 
 OBJS = $(SRC:.c=.o)
 
+SRCBONUS= ft_lstnew_bonus.c
+
+OBJSBONUS= $(SRCBONUS:.c=.o)
+
 CFLAGS = -Wall -Wextra -Werror -pedantic 
+
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
 	@echo "\033[1;105mLibft done\033[0m"
 
+
 %.o : %.c libft.h
 	@gcc $(CFLAGS) -c $< -o $@
 
-all: $(NAME)
+bonus: $(OBJSBONUS)
+	@gcc -g3 -o a.out
+	/a.out
+	
 
 run: all
 	@tput setaf 153; echo "MAKEFILE OF LIBFT"
@@ -46,11 +55,12 @@ normi:
 	@tput setaf 153; echo "Norminette"
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(OBJSBONUS)
 
 fclean: clean
 	@rm -f $(NAME)
 	
 re:	fclean all
+
 
 PHONY.: clean all fclean
