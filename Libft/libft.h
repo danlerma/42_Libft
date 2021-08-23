@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 16:39:05 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/23 15:37:49 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/23 20:53:05 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 t_list	*ft_lstnew(void *content);
-
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
 #endif

@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/08/23 19:59:40 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/08/23 20:53:49 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 
 OBJS = $(SRC:.c=.o)
 
-SRCBONUS= ft_lstnew_bonus.c
+SRCBONUS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c
 
 OBJSBONUS= $(SRCBONUS:.c=.o)
 
@@ -44,18 +44,18 @@ bonus: $(OBJSBONUS) libft.h
 	@ar rcs $(NAME) $(OBJSBONUS)
 	
 run: all
-	@tput setaf 153; echo "MAKEFILE OF LIBFT"
+	@tput setaf 199; echo "MAKEFILE OF LIBFT"
 	@gcc $(CFLAGS) libft.a -g3 -o a.out  
 	./a.out
 
 run_bonus: bonus
-	@tput setaf 58; echo "MAKEFILE OF LIBFT BONUS"
+	@tput setaf 191; echo "MAKEFILE OF LIBFT BONUS"
 	@gcc $(CFLAGS) libft.a -g3 -o a.out  
 	./a.out
 	
 normi:
-	norminette $(SRC) ./libft.h
-	@tput setaf 153; echo "Norminette"
+	@norminette $(SRC) $(SRCBONUS) ./libft.h
+	@tput setaf 208; echo "Norminette"
 
 clean:
 	@rm -f $(OBJS) $(OBJSBONUS)
@@ -64,6 +64,5 @@ fclean: clean
 	@rm -f $(NAME)
 	
 re:	fclean all
-
 
 PHONY.: clean all fclean
