@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/08/24 11:29:18 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/08/24 15:52:00 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c\
 OBJS = $(SRC:.c=.o)
 
 SRCBONUS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c \
-		ft_lstsize_bonus.c
+		ft_lstsize_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
 
 OBJSBONUS= $(SRCBONUS:.c=.o)
 
