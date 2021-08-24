@@ -3,7 +3,7 @@ $> hostname; uname -msr
 c1r8s2.42madrid.com
 Darwin 18.6.0 x86_64
 $> date
-Tue Aug 24 15:56:13 CEST 2021
+Tue Aug 24 16:45:52 CEST 2021
 $> gcc --version
 Apple clang version 11.0.0 (clang-1100.0.33.17)
 Target: x86_64-apple-darwin18.6.0
@@ -25,7 +25,7 @@ $> make re
 $> make bonus
 
 $> ls -la libft.a
--rw-r--r--  1 dlerma-c  2019  37800 Aug 24 15:56 /Users/dlerma-c/Desktop/42/Libft00/Tester/libft-war-machine/dirlibft/libft.a
+-rw-r--r--  1 dlerma-c  2019  37816 Aug 24 16:45 /Users/dlerma-c/Desktop/42/Libft00/Tester/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
@@ -1278,7 +1278,13 @@ Error: SPACE_BEFORE_FUNC    (line:   3, col:   5):	space before function name
 Error: TOO_FEW_TAB          (line:   5, col:   1):	Missing tabs for indent level
 Error: SPACE_REPLACE_TAB    (line:   5, col:   5):	Found space when expecting tab
 Error: TOO_FEW_TAB          (line:   6, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:   6, col:   5):	Found space when expecting tab
+Error: SPACE_EMPTY_LINE     (line:   6, col:   5):	Space on empty line
+Error: TOO_FEW_TAB          (line:   7, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:   7, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:   8, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:   8, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:   9, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:   9, col:   5):	Space on empty line
 Norme check failed
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstdelone_bonus.c main.c libft.a -o user_exe
 
@@ -1307,14 +1313,18 @@ $> norminette ft_lstadd_back_bonus.c | grep -E '(Error|Warning)'
 Error: SPACE_BEFORE_FUNC    (line:  15, col:   5):	space before function name
 Error: TOO_FEW_TAB          (line:  17, col:   1):	Missing tabs for indent level
 Error: SPACE_REPLACE_TAB    (line:  17, col:   5):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  17, col:  11):	Found space when expecting tab
+Error: NL_AFTER_VAR_DECL    (line:  18, col:   1):	Variable declarations must be followed by a newline
 Error: TOO_FEW_TAB          (line:  18, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  18, col:   5):	Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  18, col:   5):	Found space when expecting tab
 Error: TOO_FEW_TAB          (line:  19, col:   1):	Missing tabs for indent level
-Error: SPACE_REPLACE_TAB    (line:  19, col:   9):	Found space when expecting tab
+Error: SPACE_EMPTY_LINE     (line:  19, col:   5):	Space on empty line
 Error: TOO_FEW_TAB          (line:  20, col:   1):	Missing tabs for indent level
 Error: SPACE_REPLACE_TAB    (line:  20, col:   9):	Found space when expecting tab
 Error: TOO_FEW_TAB          (line:  21, col:   1):	Missing tabs for indent level
-Error: SPACE_EMPTY_LINE     (line:  21, col:   5):	Space on empty line
+Error: SPACE_REPLACE_TAB    (line:  21, col:   9):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  22, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  22, col:   5):	Space on empty line
 Norme check failed
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_back_bonus.c main.c libft.a -o user_exe
 
