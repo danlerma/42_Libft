@@ -6,7 +6,7 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:26:07 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/24 18:03:49 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/24 19:41:37 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static char	**assing_str(char **str, const char *s, char c, int numrows)
 	{
 		str[i] = malloc((ncolumn + 1) * sizeof(char));
 		if (str[i] == NULL)
-			return(error_malloc(str));
+			return (error_malloc(str));
 		ft_strlcpy(str[i], &s[aux], ncolumn + 1);
 		aux = aux + ncolumn;
 		numchar = count_sep(&s[aux], c, 'p');
