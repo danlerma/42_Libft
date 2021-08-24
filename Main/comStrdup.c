@@ -1,4 +1,4 @@
-#include "/Users/dlerma-c/Desktop/4200/Libft/libft.h"
+
 #include "comprobacion.h"
 
 void	comStrdup(void)

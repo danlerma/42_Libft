@@ -15,3 +15,5 @@ void	comSplit(void)
 		i++;
 	}
 }
+
+

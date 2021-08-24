@@ -1,7 +1,7 @@
 #ifndef COMPROBACION_H
 
 # define COMPROBACION_H
-# include "/Users/dlerma-c/Desktop/4200/Libft/libft.h"
+# include "/Users/dlerma-c/Desktop/42/Libft00/Libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>
