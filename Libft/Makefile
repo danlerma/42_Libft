@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/08/24 15:52:00 by dlerma-c         ###   ########.fr        #
+#    Updated: 2021/08/24 18:07:00 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,4 +66,4 @@ fclean: clean
 	
 re:	fclean all
 
-PHONY.: clean all fclean
+PHONY.: clean all fclean re bonus

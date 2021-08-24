@@ -6,11 +6,25 @@
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:26:07 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/08/22 14:59:39 by dlerma-c         ###   ########.fr       */
+/*   Updated: 2021/08/24 18:03:49 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
+static char	**error_malloc(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
+}
 
 static int	count_sep(const char *s, char c, char type)
 {
@@ -48,19 +62,6 @@ static int	count_rows(const char *s, char c)
 	return (cnt);
 }
 
-static void	ft_copy(char *ptr, const char *s, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		ptr[i] = s[i];
-		i++;
-	}
-	ptr[i] = '\0';
-}
-
 static char	**assing_str(char **str, const char *s, char c, int numrows)
 {
 	int	i;
@@ -74,7 +75,9 @@ static char	**assing_str(char **str, const char *s, char c, int numrows)
 	while (i < numrows)
 	{
 		str[i] = malloc((ncolumn + 1) * sizeof(char));
-		ft_copy(str[i], &s[aux], ncolumn + 1);
+		if (str[i] == NULL)
+			return(error_malloc(str));
+		ft_strlcpy(str[i], &s[aux], ncolumn + 1);
 		aux = aux + ncolumn;
 		numchar = count_sep(&s[aux], c, 'p');
 		aux = numchar + aux;
