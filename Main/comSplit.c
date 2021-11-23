@@ -2,12 +2,12 @@
 
 void	comSplit(void)
 {
-	char	*str = "      split       this for   me  !       ";
+	char	*str = NULL;
 	char	**result;
 	int		i;
 
 	printf("\nSTR inicial ( ' ' ): %s\n\n", str);
-	result = ft_split(str, ' ');
+	result = ft_split(str, 0);
 	i = 0;
 	while (result[i])
 	{
@@ -15,5 +15,3 @@ void	comSplit(void)
 		i++;
 	}
 }
-
-

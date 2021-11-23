@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_errors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 20:53:43 by dlerma-c          #+#    #+#             */
-/*   Updated: 2021/09/15 17:01:31 by dlerma-c         ###   ########.fr       */
+/*   Created: 2021/11/23 20:06:28 by dlerma-c          #+#    #+#             */
+/*   Updated: 2021/11/23 20:06:50 by dlerma-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	ft_putstr(char *str)
+void	ft_print_errors(char *mssg)
 {
-	while (str && *str != '\0')
-	{
-		write(1, str, 1);
-		str++;
-	}
+	write(1, "ERROR\n", 6);
+	write(1, mssg, ft_strlen(mssg));
+	exit(0);
 }

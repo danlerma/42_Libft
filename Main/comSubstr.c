@@ -17,4 +17,7 @@ void	comSubstr(void)
 	printf("\nAntes:   1\n");
 	sub = ft_substr("1", 42, 42000000);
 	printf("Despues: %s    %zu\n", sub, strlen(sub));
+	printf("\nAntes:   1\n");
+	sub = ft_substr("tripuoulle", 0, 42000);
+	printf("Despues: %s    %zu\n", "tripuoulle", strlen(sub));
 }
