@@ -6,7 +6,7 @@
 #    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 13:40:36 by dlerma-c          #+#    #+#              #
-#    Updated: 2021/11/24 16:45:28 by dlerma-c         ###   ########.fr        #
+#    Updated: 2022/10/03 19:39:37 by dlerma-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,18 +29,17 @@ SRCBONUS= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstlast_bonus.c \
 		ft_lstsize_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
 
 OBJSBONUS= $(SRCBONUS:.c=.o)
-
-CFLAGS = -Wall -Wextra -Werror -pedantic 
+BONUS= .
+CFLAGS= -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 	@echo "\033[1;105mLibft done\033[0m"
 
-
 %.o : %.c libft.h
-	@gcc $(CFLAGS) -c $< -o $@
+	gcc $(CFLAGS) -c $< -o $@
 
 bonus: $(OBJSBONUS) libft.h
 	@ar rcs $(NAME) $(OBJSBONUS)
@@ -67,4 +66,4 @@ fclean: clean
 	
 re:	fclean all
 
-PHONY.: clean all fclean re bonus
+.PHONY: clean all fclean re bonus

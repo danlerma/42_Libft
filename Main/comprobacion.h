@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   comprobacion.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/03 14:44:39 by dlerma-c          #+#    #+#             */
+/*   Updated: 2022/10/03 14:44:43 by dlerma-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef COMPROBACION_H
 
 # define COMPROBACION_H
-# include "/Users/dlerma-c/Desktop/42/Libft00/Libft/libft.h"
+# include "../Libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dlerma-c <dlerma-c@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/03 14:41:51 by dlerma-c          #+#    #+#              #
+#    Updated: 2022/10/03 14:41:53 by dlerma-c         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = comprobacion
 
 SRC = main.c comIsalpha.c comIsdigit.c comIsalnum.c comIsascii.c \
@@ -13,25 +25,30 @@ CFLAGS = -Wall -Wextra -Werror -pedantic -O3
 
 OBJS = $(SRC:.c=.o)
 
-$(NAME): $(OBJS)
-	@echo "\033[1;94mRedirigiendo\033[0m"
-	@cd $(FILE_DIR) && $(MAKE)
-
-%.o : %.c comprobacion.h $(FILE_DIR)/libft.h
-	@gcc $(CFLAGS) -c $< -o $@
+.PHONY: clean all re
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	@echo "\033[1;94mRedirigiendo\033[0m"
+	cd $(FILE_DIR) && $(MAKE)
+
+%.o : %.c comprobacion.h $(FILE_DIR)/libft.h
+	gcc $(CFLAGS) -c $< -o $@
+
 run: all
 	@tput setaf 153;
-	@gcc  $(CFLAGS) $(SRC) $(FILE_DIR)/libft.a -g3 -o a.out  
+	@echo "Creating a.out file"
+	@tput init;
+	gcc  $(CFLAGS) $(SRC) $(FILE_DIR)/libft.a -g3 -o a.out  
 	./a.out $(filter-out $@,$(MAKECMDGOALS))
 
 clean: 
-	@cd $(FILE_DIR) && $(MAKE) fclean
-	@rm -rf a.out *.o
 	@echo "\033[1;92mCLEAN\033[0m"
+	cd $(FILE_DIR) && $(MAKE) fclean
+	rm -rf $(OBJS)
 
-normi:
-	@cd $(FILE_DIR) && $(MAKE) normi
-PHONY.: clean all
+fclean:	clean
+	rm -rf a.out
+
+re:	fclean all
