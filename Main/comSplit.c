@@ -21,9 +21,14 @@ void	comSplit(void)
 	printf("\nSTR inicial ( ' ' ): %s\n\n", str);
 	result = ft_split(str, 0);
 	i = 0;
-	while (result[i])
+	if (result != NULL)
 	{
-		printf("STR %d: %s\n", i, result[i]);
-		i++;
+		while (result[i])
+		{
+			printf("STR %d: %s\n", i, result[i]);
+			free(result[i]);
+			i++;
+		}
+		free(result);
 	}
 }
